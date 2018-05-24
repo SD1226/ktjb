@@ -1,0 +1,288 @@
+/*adding fonts*/
+@font-face
+{
+	font-family:'seg';
+	src:url('fonts/segoesc.eot?#'),
+	    url('fonts/segoesc.ttf');
+}
+@font-face
+{
+	font-family:'cob';
+	src:url('fonts/CaslonOpnfaceBT.eot?#'),
+	    url('fonts/CaslonOpnfaceBT.ttf');	
+}
+@font-face
+{		
+	font-family:'com';
+	src:url('fonts/comici.eot?#'),
+	    url('fonts/comici.ttf');		
+}
+/*background styling*/
+html
+{
+height:100%;
+}
+body
+{
+	height:auto;
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-attachment:fixed;
+	margin:0px;
+	display:block;
+}
+/*media queries*/
+@media only screen and (max-width:600px)
+{
+	.navbar
+	{
+		display:none;
+	}
+}
+@media only screen and (min-width:600px)
+{
+	.ddown
+	{
+		display:none;
+	}
+}
+/*mobile dropdown menu*/
+.ddown
+{
+	position:fixed;
+    top:0px;
+    left:0px;
+    margin:0px;
+    width:100%;
+}
+.dbar
+{
+	box-sizing:border-box;
+	width:10vw;
+	height:5vh;
+	background-image:url(menu.png);
+	background-size:100% 100%;
+	position:absolute;
+	top:1vh;
+	left:3vw;
+}
+.dcont
+{
+	width:100%;
+	height:28vh;
+	background-color:hsla(0,0%,90%,0.7);
+    font-size:5vh;
+    display:none;
+	position:absolute;
+	top:7vh;
+	z-index:1;
+}
+.ddown:hover .dcont
+{
+	display:block;
+}
+.ddown:hover .dbar
+{
+	opacity:0.6;
+}
+.menu
+{
+	margin-top:0px;
+	list-style-type:none;
+	padding-left:0px;
+	text-align:center;
+}
+#mbar
+{
+	width:100%;
+	height:7vh;
+	box-sizing:border-box;
+	border-bottom:0.1vh solid black;
+	position:fixed;
+	top:0;
+	left:0;
+	background-color:hsl(180,35%,30%);
+	text-align:center;
+	font-family:arial;
+	font-size:5vh;
+	color:white;
+	padding-top:1vh;
+}
+/*desktop navigation bar*/
+.navbar
+{
+	position:fixed;
+	top:0px;
+	left:0px;
+	margin:0px;
+    list-style-type:none;
+	padding:0px;
+	text-align:center;
+	width:100%;
+	overflow:hidden;
+}
+.d
+{
+	width:25%;
+	height:7vh;
+	font-size:2.5vh;
+	background-color:hsl(180,35%,30%);
+	display:inline-block;
+	float:left;
+}
+/*navigation bar/dropdown menu link styling*/
+.m > a:link, .m > a:visited
+{
+	text-decoration:none;
+	display:block;
+	height:100%;
+	width:100%;
+	color:hsl(280,40%,30%);
+	font-family:arial;
+	padding:1vw;
+}
+.d > a:link, .d > a:visited
+{
+	text-decoration:none;
+	display:block;
+	height:100%;
+	width:100%;
+	color:white;
+	font-family:arial;
+	padding:1vw;
+}
+.thispage > a:link, .thispage > a:visited
+{
+	color:black;
+	background-color:hsl(180,35%,60%);
+}
+.m > a:hover , .m > a:active
+{
+	color:yellow;
+	background-color:hsla(0,0%,60%,0.7);
+}
+.d > a:hover
+{
+	border:2px inset yellow;
+	color:yellow;
+}
+.d > a:active
+{
+	text-decoration:underline;
+}
+/*defining annimations*/
+@keyframes fade
+{
+	from
+	{
+		opacity:0;
+	}
+	to
+	{
+		opacity:1;
+	}
+}
+@keyframes enlarge
+{
+	from
+	{
+		width:0px;
+	}
+	to
+	{
+		width:50vw;
+		max-width:350px;
+	}		
+}
+/*Content Styling*/
+.cont
+{
+	text-align:center;
+    width:90vw;
+    margin:auto;
+    margin-top:10vh;
+}
+h1
+{
+	font-size:6.5vh;
+	font-family:cob;
+}
+/*for home page*/
+#mypic
+{
+	width:50vw;
+	max-width:350px; 
+	border-radius:3vw;
+	border:1.5vh groove rgb(200,150,200);
+    animation:enlarge 3s;
+}
+#myname
+{
+	font-family:seg;
+	font-size:9vh;
+}
+/*for about me page*/
+#A
+{
+	color:rgb(200,150,250);
+}
+.about
+{
+	color:white;
+	font-size:4.5vh;
+	font-family:com;
+	animation:fade 5s;
+}
+/*for my tasks page*/
+#T
+{
+	color:black;
+}
+#tasks
+{
+	text-align:left;
+	font-size:4vh;
+	font-family:com;
+	list-style-type:disc;
+	color:white;
+	animation:fade 5s;
+}
+.t:link, .t:visited
+{
+	text-decoration:none;
+	color:rgb(100,240,230);
+}
+.t:hover
+{
+	color:rgb(240,230,120);
+	text-decoration:underline;
+}
+.t:active
+{
+	font-weight:bold;
+}
+/*for contact me page*/
+#C
+{
+	color:color:rgb(250,250,50);
+}
+#contact
+{
+	font-family:com;
+	font-size:3.2vh;
+	background-color:rgba(20,20,20,0.5);
+	width:80vw;
+	max-width:500px;
+	border:0.5vw double rgb(0,150,150);
+	margin:auto;
+	animation:fade 5s;
+	border-radius:1vw;
+	padding:1vw;
+	color:rgb(255,255,255);
+}
+.icon
+{
+	width:3.5vh;
+}
+/*end*/
