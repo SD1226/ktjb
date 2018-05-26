@@ -74,8 +74,7 @@ body
 	background-color:hsla(0,0%,90%,0.7);
     font-size:5vh;
     display:none;
-	position:absolute;
-	top:7vh;
+	margin-top:7vh;
 	z-index:1;
 }
 .ddown:hover .dcont
@@ -193,8 +192,47 @@ body
 	{
 		width:50vw;
 		max-width:350px;
+		-moz-transform:rotate(360deg);		
+		-webkit-transform:rotate(360deg);
+		transform:rotate(360deg);
 	}		
 }
+@keyframes fades
+{
+	0%
+	{
+		opacity:0;
+		-moz-transform:skewX(90deg);		
+		-webkit-transform:skewX(90deg);
+		transform:skewX(90deg);
+	}
+	50%
+	{
+		opacity:1;
+	}
+	100%
+	{
+		opacity:0;
+		-moz-transform:skewX(-90deg);
+		-webkit-transform:skewX(-90deg);
+		transform:skewX(-90deg);
+	}	
+}
+@keyframes shake
+{
+	from
+	{
+		-moz-transform:rotate(30deg);		
+		-webkit-transform:rotate(30deg);
+		transform:rotate(30deg);
+	}
+	to
+	{
+		-moz-transform:rotate(-30deg);		
+		-webkit-transform:rotate(-30deg);
+		transform:rotate(-30deg);
+	}
+}	
 /*Content Styling*/
 .cont
 {
@@ -213,14 +251,35 @@ h1
 {
 	width:50vw;
 	max-width:350px; 
+	box-sizing:border-box;
 	border-radius:3vw;
 	border:1.5vh groove rgb(200,150,200);
-    animation:enlarge 3s;
+    animation:enlarge 2s ease-out 4s;
+	animation-fill-mode:backwards;
+}
+#welcome
+{
+	font-family:seg;
+	font-size:8.5vh;
+	width:100%;
+	box-sizing:border-box;
+	text-align:center;	
+    color:rgb(150,70,150);
+	opacity:0;
+	animation:fades 4s;
+	animation-fill-mode:forwards;
+	position:absolute;
+	top:30vh;
+	overflow:hidden;
 }
 #myname
 {
 	font-family:seg;
 	font-size:9vh;
+	margin:auto;
+	overflow:hidden;
+	animation:fade 1s linear 6s;
+	animation-fill-mode:both;
 }
 /*for about me page*/
 #A
@@ -232,7 +291,7 @@ h1
 	color:white;
 	font-size:4.5vh;
 	font-family:com;
-	animation:fade 5s;
+	animation:fade 2s linear;
 }
 /*for my tasks page*/
 #T
@@ -246,7 +305,7 @@ h1
 	font-family:com;
 	list-style-type:disc;
 	color:white;
-	animation:fade 5s;
+	animation:fade 2s linear;
 }
 .t:link, .t:visited
 {
@@ -276,13 +335,22 @@ h1
 	max-width:500px;
 	border:0.5vw double rgb(0,150,150);
 	margin:auto;
-	animation:fade 5s;
+	animation:fade 2s linear;
 	border-radius:1vw;
 	padding:1vw;
 	color:rgb(255,255,255);
+	line-height:6vh;
 }
 .icon
 {
 	width:3.5vh;
+	-webkit-transition:width 0.4s;
+	-moz-transition:width 0.4s;
+	transition:width 0.4s;
+}
+.icon:hover, .icon:active
+{
+	width:5vh;
+	animation:shake 0.2s linear -0.1s 5.5 alternate;
 }
 /*end*/
