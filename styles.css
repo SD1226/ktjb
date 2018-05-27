@@ -261,7 +261,7 @@ h1
 {
 	font-family:seg;
 	font-size:8.5vh;
-	width:100%;
+	width:100vw;
 	box-sizing:border-box;
 	text-align:center;	
     color:rgb(150,70,150);
@@ -289,9 +289,71 @@ h1
 .about
 {
 	color:white;
-	font-size:4.5vh;
+	font-size:4vh;
 	font-family:com;
+	box-sizing:border-box;
+	border:0.5vw double rgb(0,150,150);
+	border-radius:2vh;
+	padding:1vw;
+    margin:auto;
+	margin-bottom:2vh;
 	animation:fade 2s linear;
+	width:80vw;	
+	background-image:url(#);
+}
+#one 
+{
+	border-color:rgb(200,150,220);
+	color:rgb(200,120,220);
+}
+#two
+{
+	border-color:rgb(190,230,50);
+	color:rgb(190,230,50);
+}
+#three
+{
+	border-color:rgb(70,250,220);
+	color:rgb(70,250,220);
+}
+@media only screen and (min-width:600px)
+{
+	.about
+	{
+		width:24vw;
+		position:absolute;
+		top:20vh;
+	}		
+	#one
+	{
+		left:7vw;
+	}
+	#two
+	{
+		left:38vw;
+	}
+	#three
+	{
+		left:69vw;
+	}	
+}
+#one:hover, #one:active
+{
+	background-image:url(iit.png);
+	background-size:100% 100%;
+	text-shadow:0.2vh 0.2vh black;
+}
+#two:hover, #two:active
+{
+	background-image:url(dav.png);
+	background-size:100% 100%;
+	text-shadow:0.2vh 0.2vh black;   
+}
+#three:hover, #three:active
+{
+	background-image:url(pizza.png);
+	background-size:100% 100%;
+ 	text-shadow:0.2vh 0.2vh black; 
 }
 /*for my tasks page*/
 #T
